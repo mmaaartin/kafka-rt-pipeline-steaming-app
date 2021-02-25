@@ -2,7 +2,7 @@
 
 ## About
 
-This is a Kafka project written in purely in Java. It consists of: 
+This is my first ever Kafka project. It is written in Java and consists of: 
 * Data Generator which generates AVRO format data
 * Producer which sends this data to a Kafka topic
 * Consumer which reads the data, deserializes and stores on your local machine directory "data".
