@@ -1,4 +1,4 @@
-# checkout-kafka
+# Kafka Real Time Pipeline & Streaming Application
 
 ## About
 
