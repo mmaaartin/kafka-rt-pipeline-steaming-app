@@ -52,3 +52,4 @@ docker exec -it CONTAINER_ID /bin/sh; exit
 ./launch.sh
 ```
 6) This will land the files to the folder "data". With two file outputs page-views-raw.out and page-views-agg.out
+7) You can view the Kafka cluster information in an interactive GUI. Just open your browser and go to localhost:9000
