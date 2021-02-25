@@ -1,0 +1,12 @@
+{
+	"namespace": "com.data.traffic.avro",
+	"type": "record",
+	"name": "PageView",
+	"fields": [
+		{"name": "user_id", "type": "int"},
+		{"name": "postcode", "type": "string"},
+		{"name": "webpage", "type": "string"},
+		{"name": "timestamp", "type": "long"}
+	]
+}
+
