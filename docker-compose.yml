@@ -4,8 +4,6 @@ services:
     image: wurstmeister/zookeeper
     ports:
       - "2181:2181"
-    networks:
-      - shared-network
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -13,8 +11,6 @@ services:
     image: wurstmeister/kafka:2.13-2.6.0
     depends_on:
       - zookeeper
-    networks:
-      - shared-network
     ports:
       - "9092:9092"
       - "9093"
@@ -32,8 +28,6 @@ services:
     image: obsidiandynamics/kafdrop
     ports:
       - "9000:9000"
-    networks:
-      - shared-network
     environment:
       KAFKA_BROKERCONNECT: kafka:9093
       JVM_OPTS: "-Xms32M -Xmx64M"
@@ -48,16 +42,12 @@ services:
       - kafka
     ports:
       - "8081:8081"
-    networks:
-      - shared-network
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafka:9093'
-  java-image:
+  java-machine:
+    build: .
+    container_name: java-machine
     depends_on:
       - schema-registry
-    build: .
-    networks:
-      - shared-network
-networks:
-  shared-network: {}
+    command: tail -F configuration

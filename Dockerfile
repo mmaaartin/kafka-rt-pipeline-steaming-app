@@ -1,9 +1,8 @@
-FROM openjdk:8-jre-slim
+FROM java:8
+WORKDIR /app
 
-EXPOSE 8080
+RUN mkdir data/
 
-RUN mkdir /app
-
-COPY jars/ /app/jars
-COPY launch.sh /app/launch.sh
-COPY configuration/ /app/configuration
+COPY jars/ jars
+COPY launch.sh launch.sh
+COPY configuration/ configuration
