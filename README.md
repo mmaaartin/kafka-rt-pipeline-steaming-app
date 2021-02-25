@@ -17,6 +17,8 @@ Note: Ideally this project would be split into different modules/gradle builds b
 
 ![alt text](https://github.com/mmaaartin/checkout-kafka/blob/main/images/architecture.png "Architecture")
 
+**Note: You can find data files with sample few records left there to review the file structure.**
+
 ## To run the project
 
 You will need Docker installed on your machine to run this.
